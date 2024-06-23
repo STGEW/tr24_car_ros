@@ -24,3 +24,6 @@ if(BUILD_TESTING)
 endif()
 
 ament_package()
+
+<depend>rclcpp</depend>
+<depend>std_msgs</depend>
