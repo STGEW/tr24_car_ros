@@ -8,13 +8,17 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(std_msgs REQUIRED)
+find_package(tr24_ros_interfaces REQUIRED)
 
-add_executable(talker src/publisher_lambda_function.cpp)
-ament_target_dependencies(talker rclcpp std_msgs)
+add_executable(uart_tx_node src/uart_tx_node.cpp)
+ament_target_dependencies(uart_tx_node rclcpp tr24_ros_interfaces)
+
+add_executable(uart_tx_load_node src/uart_tx_load_node.cpp)
+ament_target_dependencies(uart_tx_load_node rclcpp tr24_ros_interfaces)
 
 install(TARGETS
-  talker
+  uart_tx_node
+  uart_tx_load_node
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
@@ -31,5 +35,3 @@ endif()
 
 ament_package()
 
-<depend>rclcpp</depend>
-<depend>std_msgs</depend>
