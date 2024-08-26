@@ -3,8 +3,22 @@
 
 ### useful commands
 
+For Ubuntu Server 22.04
+https://robofoundry.medium.com/running-ros2-foxy-on-raspberry-pi-zero-2w-a4720334d3bb
+
+```
+sudo apt-get install ros-humble-desktop
+```
+
+Install yolov8 package
+https://docs.ultralytics.com/quickstart/#__tabbed_1_1
+```
+pip install ultralytics
+```
+
 ```
 source /opt/ros/jazzy/setup.bash
+source /opt/ros/humble/setup.bash
 
 https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package.html
 
@@ -18,7 +32,9 @@ colcon build
 # To build a package with name tr24_car_ros
 ```
 cd ~/ros2_ws/src
-colcon build --packages-select tr24_car_ros
+colcon build --executor sequential
+# colcon build --packages-select tr24_car_ros
+# colcon build --packages-select tr24_car_ros --parallel-workers 2
 ```
 
 # To run uart_tx_node of a package tr24_car_ros
