@@ -19,6 +19,7 @@ pip install ultralytics
 ```
 source /opt/ros/jazzy/setup.bash
 source /opt/ros/humble/setup.bash
+source /opt/ros/foxy/setup.bash
 
 https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package.html
 
