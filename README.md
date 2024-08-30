@@ -2,6 +2,12 @@
 
 
 ### useful commands
+https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html
+
+```
+ros2 topic pub /car_new_coords tr24_ros_interfaces/msg/CarEnginesState "{left: 0.0, right: 50.0}"
+```
+
 
 For Ubuntu Server 22.04
 https://robofoundry.medium.com/running-ros2-foxy-on-raspberry-pi-zero-2w-a4720334d3bb
@@ -23,11 +29,11 @@ source /opt/ros/foxy/setup.bash
 
 https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package.html
 
-source install/local_setup.bash
+rosdep install -i --from-path src --rosdistro foxy -y
 
 cd ~/ros2_ws
-
-colcon build
+source install/local_setup.bash
+colcon build --packages-select py_pubsub
 ```
 
 # To build a package with name tr24_car_ros
@@ -37,6 +43,7 @@ colcon build --executor sequential
 # colcon build --packages-select tr24_car_ros
 # colcon build --packages-select tr24_car_ros --parallel-workers 2
 ```
+
 
 # To run uart_tx_node of a package tr24_car_ros
 ```
