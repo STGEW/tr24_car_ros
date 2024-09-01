@@ -5,7 +5,7 @@
 https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html
 
 ```
-ros2 topic pub /car_new_coords tr24_ros_interfaces/msg/CarEnginesState "{left: 0.0, right: 50.0}"
+ros2 topic pub -1 /car_new_coords tr24_ros_interfaces/msg/CarEnginesState "{left: 0.0, right: 50.0}"
 ```
 
 
